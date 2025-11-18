@@ -100,7 +100,7 @@ The demo we built uses `react-native-executorch` with a quantized model. It's a 
 The demo application [in this repository](https://github.com/nearform/ai-beyond-the-cloud) demonstrates on-device summarization. Users paste text directly, and the app processes it locally and generates a summary using an on-device LLM.
 
 <p align="center">
-  <img src="./images/qwen-result.png" alt="On-Device Summarizer App Result" />
+  <img src="./public/qwen-result.png" alt="On-Device Summarizer App Result" />
 </p>
 
 Architecture-wise, it's similar to the expo-stt-blog example (which does speech-to-text with Whisper), but instead of speech recognition, we're doing text summarization. The model runs entirely on-device, using optimized quantized weights. Inference stays fast and power-efficient.
@@ -110,14 +110,14 @@ Key implementation details:
 - Local vector embeddings for RAG (if you want to add knowledge base features later)
 - Progressive summarization for very long texts
 
+<p align="center">
+  <img src="./public/model-selection.png" alt="On-Device Summarizer App with Model Selection Dialog" />
+</p>
+
 The app allows switching between different models (see the [model registry](https://github.com/nearform/ai-beyond-the-cloud/blob/main/utils/model-registry.ts) in the repo), and our testing revealed some interesting trade-offs. The smallest model, `SMOLLM2_1_135M_QUANTIZED` at just 50MB, runs incredibly fast but doesn't produce the best results. On the other end, going for the biggest model like `LLAMA3_2_3B_SPINQUANT` quickly leads to memory issues on many devices. From our experience, `QWEN2_5_0_5B_QUANTIZED` (~200MB) produces the most balanced result—good quality output with reasonable performance and memory usage.
 
 <p align="center">
-  <img src="./images/model-selection.png" alt="On-Device Summarizer App with Model Selection Dialog" />
-</p>
-
-<p align="center">
-  <img src="./images/smollm2-result.png" alt="On-Device Summarizer App Result" />
+  <img src="./public/smollm2-result.png" alt="On-Device Summarizer App Result" />
 </p>
 
 You can try it yourself: clone the repo, install dependencies, run `npm run ios` or `npm run android`. Works on iOS and Android. Everything happens on the device.

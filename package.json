@@ -10,13 +10,17 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "slides": "slidev slides.md",
+    "slides:build": "slidev build slides.md",
+    "slides:export": "slidev export slides.md"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/elements": "^2.6.3",
     "@react-navigation/native": "^7.1.8",
+    "@slidev/theme-default": "^0.25.0",
     "expo": "~54.0.20",
     "expo-constants": "~18.0.10",
     "expo-font": "~14.0.9",
@@ -42,6 +46,7 @@
   },
   "devDependencies": {
     "@jest/test-sequencer": "^29.7.0",
+    "@slidev/cli": "^0.50.0",
     "@testing-library/react-native": "^12.8.0",
     "@types/jest": "^29.5.14",
     "@types/react": "~19.1.0",
