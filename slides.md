@@ -21,7 +21,7 @@ css: unocss
 
 ## The Current and Future State of On-Device Generative AI
 
-**Ruslan Bredikhin** • November 2025
+**Ruslan Bredikhin** • January 2026
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -33,10 +33,91 @@ css: unocss
 layout: default
 ---
 
-# Stop Paying for Every Token
+# Traditional AI in Mobile Apps
+
+<div class="text-2xl font-bold mb-8 text-center">
+  How mobile apps typically use AI today
+</div>
+
+<div class="grid grid-cols-4 gap-4 mt-12">
+  <div class="text-center p-6 bg-blue-500 bg-opacity-20 rounded-lg">
+    <div class="text-4xl mb-4">📱</div>
+    <div class="text-xl font-semibold">Mobile App</div>
+    <div class="text-sm mt-2 opacity-70">User input</div>
+  </div>
+  <div class="text-center p-6 bg-green-500 bg-opacity-20 rounded-lg">
+    <div class="text-4xl mb-4">🌐</div>
+    <div class="text-xl font-semibold">API Call</div>
+    <div class="text-sm mt-2 opacity-70">HTTP request</div>
+  </div>
+  <div class="text-center p-6 bg-yellow-500 bg-opacity-20 rounded-lg">
+    <div class="text-4xl mb-4">☁️</div>
+    <div class="text-xl font-semibold">Cloud Service</div>
+    <div class="text-sm mt-2 opacity-70">Server processing</div>
+  </div>
+  <div class="text-center p-6 bg-purple-500 bg-opacity-20 rounded-lg">
+    <div class="text-4xl mb-4">📥</div>
+    <div class="text-xl font-semibold">Response</div>
+    <div class="text-sm mt-2 opacity-70">AI output</div>
+  </div>
+</div>
+
+<div class="mt-8 p-6 bg-gray-500 bg-opacity-20 rounded-lg">
+  <div class="text-lg font-semibold mb-2">Common Approach</div>
+  <div class="text-sm opacity-90">
+    Apps send user data to cloud services (OpenAI, Anthropic, etc.)<br/>
+    via HTTP requests. Processing happens on remote servers,<br/>
+    and results are returned to the device.
+  </div>
+</div>
+
+---
+layout: default
+---
+
+# The Inconveniences of Cloud-Based AI
+
+<div class="text-2xl font-bold mb-8 text-center">
+  Challenges with the traditional approach
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+  <div>
+    <h3 class="text-2xl font-bold mb-4">💰 Cost Issues</h3>
+    <ul class="text-lg space-y-3">
+      <li>❌ Per-token pricing adds up quickly</li>
+      <li>❌ Scaling means higher costs</li>
+      <li>❌ Infrastructure provisioning needed</li>
+      <li>❌ Rate limit negotiations</li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="text-2xl font-bold mb-4">🔒 Privacy & Connectivity</h3>
+    <ul class="text-lg space-y-3">
+      <li>❌ Data sent to third-party services</li>
+      <li>❌ Requires internet connection</li>
+      <li>❌ Network latency delays</li>
+      <li>❌ API quotas and limits</li>
+    </ul>
+  </div>
+</div>
+
+<div class="mt-8 p-6 bg-red-500 bg-opacity-20 rounded-lg">
+  <div class="text-lg font-semibold mb-2">The Problem</div>
+  <div class="text-sm opacity-90">
+    Every request costs money, every query requires connectivity,<br/>
+    and sensitive data leaves the device. There must be a better way...
+  </div>
+</div>
+
+---
+layout: default
+---
+
+# On-device LLMs Deliver Enterprise AI Functionality
 
 <div class="text-4xl font-bold text-center mt-20">
-  On-device LLMs deliver enterprise AI functionality
+  Stop paying for every token!
 </div>
 
 <div class="grid grid-cols-2 gap-8 mt-16">
@@ -293,12 +374,12 @@ layout: default
 </div>
 
 <div class="mt-8 p-6 bg-yellow-500 bg-opacity-20 rounded-lg">
-  <div class="text-lg font-semibold mb-2">Example: 7B Parameter Model</div>
+  <div class="text-lg font-semibold mb-2">Example: 0.5B Parameter Model</div>
   <div class="grid grid-cols-4 gap-4 text-sm">
-    <div>FP32: 28 GB</div>
-    <div>FP16: 14 GB</div>
-    <div>INT8: 7 GB</div>
-    <div>INT4: 3.5 GB</div>
+    <div>FP32: 2 GB</div>
+    <div>FP16: 1 GB</div>
+    <div>INT8: 0.5 GB</div>
+    <div>INT4: 0.25 GB</div>
   </div>
 </div>
 
@@ -651,6 +732,89 @@ backgroundSize: contain
 layout: section
 ---
 
+# What's New: November 2025 – January 2026
+
+---
+layout: default
+---
+
+# React Native & On-Device AI: Recent Updates
+
+<div class="text-2xl font-bold mb-6 text-center">
+  From research demos to production-ready standards
+</div>
+
+<div class="grid grid-cols-2 gap-6 mt-8">
+  <div class="p-5 bg-blue-500 bg-opacity-20 rounded-lg">
+    <div class="text-xl font-semibold mb-3">⚛️ React Native Tools</div>
+    <div class="text-sm opacity-90 space-y-2">
+      <div><strong>react-native-executorch (Jan 2026):</strong> Major update with Expo SDK 54 support. Enhanced Stable Diffusion & Whisper support, improved VAD, finer LLM control.</div>
+      <div><strong>Apple LLM Support (Dec 2025):</strong> Production-ready on-device Apple LLMs for iOS.</div>
+      <div><strong>Tool Calling:</strong> Local AI models can now interact with external functions, creating AI agents in mobile apps.</div>
+    </div>
+  </div>
+  <div class="p-5 bg-green-500 bg-opacity-20 rounded-lg">
+    <div class="text-xl font-semibold mb-3">🚀 Performance & Architecture</div>
+    <div class="text-sm opacity-90 space-y-2">
+      <div><strong>New Architecture (Default):</strong> Fabric Renderer & TurboModules provide near-native performance for AI inference.</div>
+      <div><strong>Direct C++ Access:</strong> TurboModules enable C++/Rust for performance-critical tasks without blocking UI.</div>
+      <div><strong>React Native Worklets (Early 2026):</strong> General-purpose concurrency engine for heavy AI computations on separate threads.</div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-6 p-4 bg-yellow-500 bg-opacity-20 rounded-lg">
+  <div class="text-sm text-center opacity-90">
+    <strong>Key Shift:</strong> Tools now bypass the traditional "bridge" for direct native execution of AI models.<br/>
+    On-device AI has matured from experimental to production-ready for React Native developers.
+  </div>
+</div>
+
+---
+layout: default
+---
+
+# Mobile AI Breakthroughs: November 2025 – January 2026
+
+<div class="text-2xl font-bold mb-6 text-center">
+  On-device AI goes mainstream on mobile
+</div>
+
+<div class="grid grid-cols-2 gap-6 mt-8">
+  <div class="p-5 bg-purple-500 bg-opacity-20 rounded-lg">
+    <div class="text-xl font-semibold mb-3">📱 Samsung & Gemini</div>
+    <div class="text-sm opacity-90">
+      <strong>January 2026:</strong> Samsung announced plans to bring Google's Gemini AI to 800 million devices by end of 2026.<br/>
+      Expanding on-device features (image editing, real-time translation) to mid-tier and budget phones.
+    </div>
+  </div>
+  <div class="p-5 bg-orange-500 bg-opacity-20 rounded-lg">
+    <div class="text-xl font-semibold mb-3">🔄 Cross-Device Context</div>
+    <div class="text-sm opacity-90">
+      <strong>Motorola/Lenovo Qira (Jan 2026):</strong> On-device AI platform that syncs user context across phones and laptops locally.<br/>
+      Research on a Razr fold continues instantly on a Yoga laptop.
+    </div>
+  </div>
+  <div class="p-5 bg-red-500 bg-opacity-20 rounded-lg">
+    <div class="text-xl font-semibold mb-3">🤖 Predictive Apps</div>
+    <div class="text-sm opacity-90">
+      <strong>2026 Trend:</strong> Shift from "reactive" to "predictive" apps.<br/>
+      On-device models anticipate user needs and suggest actions before apps are opened.
+    </div>
+  </div>
+  <div class="p-5 bg-teal-500 bg-opacity-20 rounded-lg">
+    <div class="text-xl font-semibold mb-3">⚡ Agentic Mobile Silicon</div>
+    <div class="text-sm opacity-90">
+      <strong>CES 2026:</strong> New chips designed for "agentic actioning" on portable devices.<br/>
+      Models can perform multi-step tasks locally without cloud dependency.
+    </div>
+  </div>
+</div>
+
+---
+layout: section
+---
+
 # Conclusion
 
 ---
@@ -692,43 +856,6 @@ layout: default
 </div>
 
 ---
-layout: default
----
-
-# When to Use On-Device AI
-
-<div class="text-2xl font-bold mb-8 text-center">
-  Not every app needs an LLM, but when it matters...
-</div>
-
-<div class="grid grid-cols-3 gap-6 mt-12">
-  <div class="text-center p-6 bg-blue-500 bg-opacity-20 rounded-lg">
-    <div class="text-5xl mb-4">🔒</div>
-    <div class="text-xl font-semibold mb-2">Privacy Matters</div>
-    <div class="text-sm opacity-70">Sensitive data requirements</div>
-  </div>
-  <div class="text-center p-6 bg-green-500 bg-opacity-20 rounded-lg">
-    <div class="text-5xl mb-4">💰</div>
-    <div class="text-xl font-semibold mb-2">Cost Matters</div>
-    <div class="text-sm opacity-70">Scale without infrastructure</div>
-  </div>
-  <div class="text-center p-6 bg-purple-500 bg-opacity-20 rounded-lg">
-    <div class="text-5xl mb-4">🌐</div>
-    <div class="text-xl font-semibold mb-2">Offline Matters</div>
-    <div class="text-sm opacity-70">Poor connectivity areas</div>
-  </div>
-</div>
-
-<div class="mt-12 text-center text-xl">
-  <div class="font-semibold mb-2">The Path Forward</div>
-  <div class="text-lg opacity-80">
-    Continuous innovation in model compression<br/>
-    Better collaboration between LLM researchers and mobile hardware developers<br/>
-    Tools that make on-device AI as easy as cloud-based alternatives
-  </div>
-</div>
-
----
 layout: center
 class: text-center
 ---
@@ -754,5 +881,5 @@ class: text-center
 </div>
 
 <div class="mt-16 text-sm opacity-60">
-  Ruslan Bredikhin • November 2025
+  Ruslan Bredikhin • January 2026
 </div>
